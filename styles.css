@@ -689,7 +689,32 @@ html[lang=en] .bp-head h3{letter-spacing:-.025em;line-height:1.22}
 .bv-o3 b{bottom:16%}
 /* Hightemp blocks use the Hightemp web accent blue in place of the site accent. */
 .hightemp,#hightemp{--accent:#1b7cff}
-/* Hightemp platform label uses the status style: beside the site label on the business page, right above it on the home page. */
+/* Hightemp platform label uses the status style and sits beside the site label. */
 .venture-link-row .status.status-lead{margin-right:22px}
-.ht-platform{margin-top:24px}
-.ht-platform+.venture-link-row{margin-top:0}
+/* 2026-10-11: home venture copy has no outbound site link; the whole copy block is the link to the business page (stretched from the title link). */
+.venture-copy{position:relative}
+.venture-copy .title-area::after{content:"";position:absolute;inset:-16px;z-index:1}
+/* 2026-10-11: the closing letter under the Venn is centred where the chapter head is centred. */
+.bp-letter p{text-align:center}
+@media(max-width:760px){.bp-letter p{text-align:left}}
+/* 2026-10-11: business page — more air where one brand's blocks end and the next block (Hightemp intro, the Venn chapter) begins. */
+#hightemp.bp-biz,.bp-why .bp-center{padding-top:184px}
+@media(max-width:1100px){#hightemp.bp-biz,.bp-why .bp-center{padding-top:136px}}
+@media(max-width:760px){#hightemp.bp-biz,.bp-why .bp-center{padding-top:92px}}
+/* Venn: the area where all three circles overlap stays lit in the hover style. The circles sit at different depths in a turning 3D scene, so site.js feeds their on-screen boxes (--s sizes, --p positions) every frame. */
+.bv-orb-mid{position:absolute;inset:0;pointer-events:none;visibility:hidden;--m:radial-gradient(closest-side,#000 calc(100% - .5px),#0000);--l:radial-gradient(closest-side,#0000 70.7%,#eb5d2815 calc(100% - 1.5px),#eb5d28b3 calc(100% - 1px),#eb5d28b3 100%);background:var(--l),var(--l),var(--l),#eb5d280a;background-repeat:no-repeat;background-size:var(--s),auto;background-position:var(--p),0 0;-webkit-mask:var(--m),var(--m),var(--m);mask:var(--m),var(--m),var(--m);-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:var(--s);mask-size:var(--s);-webkit-mask-position:var(--p);mask-position:var(--p);-webkit-mask-composite:source-in;mask-composite:intersect}
+.bv-orb-mid.is-on{visibility:visible}
+/* 2026-10-11: more air under the home PR band and under each business-page brand intro. */
+.venture.shortforme{padding-top:152px}
+.bp-intro{padding-bottom:104px}
+@media(max-width:1100px){.venture.shortforme{padding-top:112px}.bp-intro{padding-bottom:80px}}
+@media(max-width:760px){.venture.shortforme{padding-top:72px}.bp-intro{padding-bottom:56px}}
+/* 2026-10-11: business page chapters describe each point in one paragraph instead of a numbered list. */
+.bp-para{margin-top:38px;padding-top:28px;border-top:1px solid var(--line);font-size:14.5px;line-height:2;color:#d9d5cc;word-break:keep-all;overflow-wrap:anywhere}
+@media(max-width:1100px){.bp-para{font-size:13.5px}}
+@media(max-width:760px){.bp-para{margin-top:26px;padding-top:22px;font-size:14px}}
+/* 2026-10-11: home — more air on both sides of the rule between the Shortforme and Hightemp blocks. */
+.venture.shortforme{padding-bottom:104px}
+.venture.hightemp{padding-top:104px}
+@media(max-width:1100px){.venture.shortforme{padding-bottom:80px}.venture.hightemp{padding-top:80px}}
+@media(max-width:760px){.venture.shortforme{padding-bottom:56px}.venture.hightemp{padding-top:48px}}
