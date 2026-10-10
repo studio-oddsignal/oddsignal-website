@@ -755,3 +755,9 @@ html[lang=en] .bp-head h3{letter-spacing:-.025em;line-height:1.22}
 .bp-why{padding-bottom:0}
 @media(max-width:1100px){.bp-biz,.bp-why{--bp-gap:104px}}
 @media(max-width:760px){.bp-biz,.bp-why{--bp-gap:72px}}
+/* 2026-10-11: home follows the business page's vertical rhythm — the same gap above and below every block after the hero (track record, each venture, approach, about). */
+.ventures,.approach,.about{--home-gap:136px}
+.ventures.section{padding-block:0}
+.ventures .pr-band,.ventures .venture.shortforme,.ventures .venture.hightemp,.approach.section,.about.section{padding-block:var(--home-gap)}
+@media(max-width:1100px){.ventures,.approach,.about{--home-gap:104px}}
+@media(max-width:760px){.ventures,.approach,.about{--home-gap:72px}}
