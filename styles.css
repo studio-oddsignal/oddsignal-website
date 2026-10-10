@@ -737,3 +737,13 @@ html[lang=en] .bp-head h3{letter-spacing:-.025em;line-height:1.22}
 .deck-zone:hover span{transform:none;border-color:var(--accent);color:var(--accent)}
 }
 @media(hover:hover) and (pointer:fine) and (max-width:900px){.deck-zone{aspect-ratio:1.44/3}}
+/* 2026-10-11: about diagram — the dotted line comes down from the top edge of the section into the origin dot (the long lead path is cut at the section edge), and the two brand cards are 10% larger around the same connector points. */
+.about{overflow-y:clip}
+.bz-card{width:68.75cqi;height:13.75cqi;gap:2.86cqi;padding-inline:2.42cqi;border-radius:2.64cqi}
+.bz-sf{top:22.29cqi}
+.bz-ac{top:38.96cqi}
+.bz-ico{width:9.24cqi}
+.bz-text{gap:1cqi}
+.bz-text small{font-size:clamp(6.6px,1.375cqi,9.9px)}
+.bz-word{height:3.19cqi}
+.bz-text b{font-size:3.85cqi}
