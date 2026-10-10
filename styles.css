@@ -566,7 +566,7 @@ html[lang=en] .bp-head h3{letter-spacing:-.025em;line-height:1.22}
 .bv-orb{position:absolute;width:42cqw;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#0000 52%,#f4f1ea12 100%),linear-gradient(155deg,#ffffff14 0,#0000 46%),#f4f1ea05;box-shadow:inset 0 0 0 1px #f4f1ea3d,0 3cqw 8cqw #0007}
 .bv-o1{left:16cqw;top:6cqw;transform:translateZ(-5cqw)}
 .bv-o2{left:42cqw;top:6cqw;transform:translateZ(0)}
-.bv-o3{left:29cqw;top:27cqw;transform:translateZ(6cqw);background:radial-gradient(circle,#0000 50%,#eb5d2833 100%),linear-gradient(155deg,#ffffff12 0,#0000 46%),#eb5d280a;box-shadow:inset 0 0 0 1px #eb5d28b3,0 3cqw 8cqw #0007}
+.bv-o3{left:29cqw;top:27cqw;transform:translateZ(6cqw)}
 .bv-orb b{position:absolute;font:400 clamp(9px,1.75cqw,12px)/1 var(--sans);letter-spacing:.26em;text-transform:uppercase;color:#f4f1eae0;white-space:nowrap}
 .bv-o1 b{left:17%;top:34%}.bv-o2 b{right:17%;top:34%;text-align:right}.bv-o3 b{left:50%;bottom:20%;transform:translateX(-50%);text-align:center}
 .bv svg.bv-orb-core{position:absolute;inset:33.3cqw auto auto 42.3cqw;width:15.4cqw;height:auto;overflow:hidden;filter:brightness(1.35) drop-shadow(0 0 1.6cqw #eb5d2866);transform:translateZ(10cqw)}
@@ -615,3 +615,81 @@ html[lang=en] .bp-head h3{letter-spacing:-.025em;line-height:1.22}
 }
 @keyframes mk-sway{from{transform:rotateY(-29deg) rotateX(9deg) rotateZ(2deg)}to{transform:rotateY(-16deg) rotateX(5deg) rotateZ(1deg)}}
 @keyframes sf-float{from{translate:0 -1.2cqh}to{translate:0 1.2cqh}}
+/* Shortforme intro slide: logo lockup (lit 3D icon, wordmark beside it) in the Hightemp intro frame. */
+.sf-intro{container-type:size}
+.sfi-stage{position:absolute;inset:0;z-index:1;overflow:hidden;background:radial-gradient(36cqw 62cqh at 22% 50%,#ff553340 0,#ff553314 45%,#0000 76%)}
+.sf-intro .hightemp-visual .sfi-word{position:absolute;inset:50cqh auto auto 42cqw;width:34cqw;height:auto;object-fit:contain;translate:0 -50%}
+.sfi-tile{position:absolute;left:10cqw;top:32cqh;width:36cqh;aspect-ratio:1;display:grid;place-items:center;border-radius:22%;background:linear-gradient(215deg,#ff8a66,#ff5533 42%,#e8431f);transform:perspective(90cqw) rotateY(26deg) rotateX(7deg);box-shadow:-.3cqh 0 #d83e1c,-.6cqh 0 #c93818,-.9cqh 0 #b93314,-1.2cqh 0 #a92e12,-1.5cqh 0 #99290f,-1.8cqh 0 #89240d,0 0 14cqh #ff553366,inset 0 .4cqh .3cqh #ffffff66}
+.sfi-tile svg{width:66%;height:auto}
+@media(prefers-reduced-motion:no-preference){.sf-slide:not([hidden]) .sfi-tile{animation:sf-float 5s ease-in-out infinite alternate}}
+/* Shortforme deck tabs: same dash indicators as the Hightemp dots; the step names stay for screen readers. */
+.sf-deck .sf-tabs{justify-content:center;gap:2px;border-top:0;margin:14px 0 0}
+.sf-deck .sf-tabs button{flex:0 0 32px;width:32px;min-height:0;height:44px;padding:0;margin:0;border:0;position:relative}
+.sf-deck .sf-tabs button::before{content:"";position:absolute;left:4px;right:4px;top:21px;height:2px;background:#42403a;transition:background .2s}
+.sf-deck .sf-tabs button[aria-selected=true]::before{background:var(--accent)}
+.sf-deck .sf-tabs button span{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+/* Hightemp intro slide: the class name sits in the empty left half, in the Hightemp serif tone. */
+.ht-intro{container-type:size}
+.ht-intro .hti-word{position:absolute;z-index:2;left:7cqw;top:50%;translate:0 -50%;margin:0;font-family:var(--serif);font-weight:400;font-size:6.2cqw;line-height:1;letter-spacing:-.025em;white-space:nowrap;color:#f4efe6;background:linear-gradient(180deg,#fff 0,#f4efe6 45%,#b9b1a3 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 .6cqh 2.4cqh #000c)}
+/* Business page intro: the Shortforme 3D logo tile from the home intro slide, floating above the status row. */
+.bp-logo{display:grid;place-items:center;width:88px;aspect-ratio:1;margin:0 0 18px -2px;border-radius:22%;background:linear-gradient(215deg,#ff8a66,#ff5533 42%,#e8431f);transform:perspective(600px) rotateY(26deg) rotateX(7deg);box-shadow:-1px 0 #d83e1c,-2px 0 #c93818,-3px 0 #b93314,-4px 0 #a92e12,-5px 0 #99290f,-6px 0 #89240d,0 0 44px #ff553366,inset 0 1px 1px #ffffff66}
+.bp-logo svg{width:66%;height:auto}
+@media(max-width:760px){.bp-logo{width:72px;margin:26px 0 0 6px}}
+@media(prefers-reduced-motion:no-preference){.bp-logo{animation:bp-logo-float 5s ease-in-out infinite alternate}}
+@keyframes bp-logo-float{from{transform:perspective(600px) rotateY(30deg) rotateX(8deg);translate:0 -5px}to{transform:perspective(600px) rotateY(14deg) rotateX(4deg);translate:0 5px}}
+/* Track-record graph in depth: the curve is the front edge of a slab extruded back over a floor grid; spheres mark the points and a light bead runs the line. */
+.pr-grid line{stroke:#575347;stroke-width:1;opacity:.38}
+.pr-foot{fill:#eb5d28;opacity:.1}
+.pr-refl{fill:url(#prRefl)}
+.pr-side{fill:url(#prSide)}
+.pr-rib{fill:url(#prRib)}
+.pr-back{fill:none;stroke:#ffc2a3;stroke-width:1;opacity:.55}
+.pr-line{filter:drop-shadow(0 0 6px #eb5d2899)}
+.pr-dot{fill:url(#prBall);stroke:none;filter:drop-shadow(0 2px 3px #000a)}
+.pr-dot-end{fill:url(#prBallEnd);stroke:none;filter:drop-shadow(0 0 10px #eb5d28cc)}
+.pr-dot.is-on{transform:scale(1.5)}
+.pr-bead{fill:#fff1e8;filter:drop-shadow(0 0 6px #ff9d70) drop-shadow(0 0 14px #eb5d28)}
+.pr-pulse{fill:none;stroke:var(--accent);stroke-width:1.5;opacity:0;transform-box:fill-box;transform-origin:center}
+@media(prefers-reduced-motion:reduce){.pr-bead{display:none}}
+@media(prefers-reduced-motion:no-preference){
+.pr-solid{animation:pr-reveal 1.8s ease-out .2s both}
+.pr-floor{animation:pr-fade 1.2s ease-out both}
+.pr-pulse{animation:pr-pulse 2.6s ease-out 2s infinite}
+}
+@keyframes pr-reveal{from{clip-path:inset(-20% 100% -20% 0)}to{clip-path:inset(-20% -5% -20% 0)}}
+@keyframes pr-fade{from{opacity:0}to{opacity:1}}
+@keyframes pr-pulse{from{opacity:.7;transform:scale(1)}to{opacity:0;transform:scale(3.4)}}
+/* Business page: the intro's status row sits on the big title's baseline; Hightemp uses the same layout as the Shortforme blocks. */
+.bp-intro{align-items:last baseline}
+.bp-intro .venture-link-row{align-items:baseline}
+.bp-tight{padding-bottom:0}
+.bp-why{padding-bottom:110px}
+.bp-logo-ht{background:linear-gradient(215deg,#4a4844,#161615 42%,#000);box-shadow:-1px 0 #3d3b37,-2px 0 #353330,-3px 0 #2d2b29,-4px 0 #262523,-5px 0 #1f1e1d,-6px 0 #181817,0 0 44px #ffffff1f,inset 0 1px 1px #ffffff40;overflow:hidden}
+.bp-logo-ht img{width:100%;height:100%;object-fit:cover;border-radius:inherit;mix-blend-mode:screen}
+.bp-shot{margin:0;aspect-ratio:1528/960;perspective:1400px}
+.bp-shot img{display:block;width:100%;height:100%;object-fit:cover;border:1px solid #2c2b28;box-shadow:0 34px 60px -28px #000,0 0 80px #eb5d2814;-webkit-mask-image:linear-gradient(90deg,#0000,#000 7%,#000 93%,#0000);mask-image:linear-gradient(90deg,#0000,#000 7%,#000 93%,#0000)}
+.bp-shot-l img{transform:rotateY(7deg)}
+.bp-shot-r img{transform:rotateY(-7deg)}
+@media(max-width:1100px){.bp-why{padding-bottom:85px}}
+@media(max-width:900px){.bp-chapter>.bp-shot{margin-top:36px}.bp-shot img{transform:none}}
+@media(max-width:760px){.bp-why{padding-bottom:65px}.bp-tight{padding-bottom:0}.bp-logo{margin-left:0}}
+.bp-intro .status{translate:0 -1.7px}
+/* Business page: logo tiles are links (Shortforme site; Hightemp iOS and Android stores). */
+.bp-logos{display:flex;gap:26px}
+.bp-logo-link{transition:filter .3s}
+.bp-logo-link:hover,.bp-logo-link:focus-visible{filter:brightness(1.18)}
+.bp-logo-ht .bp-logo-photo{mix-blend-mode:normal}
+/* Venn: no circle is lit by default; the one under the pointer lights up. Labels run on two lines. */
+.bv-orbs-in{pointer-events:none}
+.bv-orb{pointer-events:auto;transition:background .35s,box-shadow .35s}
+.bv-orb:hover{background:radial-gradient(circle,#0000 50%,#eb5d2833 100%),linear-gradient(155deg,#ffffff12 0,#0000 46%),#eb5d280a;box-shadow:inset 0 0 0 1px #eb5d28b3,0 3cqw 8cqw #0007}
+.bv-orb b{line-height:1.7;white-space:normal}
+.bv-o1 b{left:14%;top:30%}
+.bv-o2 b{right:14%;top:30%}
+.bv-o3 b{bottom:16%}
+/* Hightemp blocks use the Hightemp web accent blue in place of the site accent. */
+.hightemp,#hightemp{--accent:#1b7cff}
+/* Hightemp platform label uses the status style: beside the site label on the business page, right above it on the home page. */
+.venture-link-row .status.status-lead{margin-right:22px}
+.ht-platform{margin-top:24px}
+.ht-platform+.venture-link-row{margin-top:0}

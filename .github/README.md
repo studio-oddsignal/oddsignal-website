@@ -7,7 +7,7 @@ Oddsignal is a Korean company (founded September 2026) building **Shortforme**, 
 - Static site: plain HTML, CSS and JavaScript, no build step
 - Languages: Korean and English (toggle in the header)
 - Hosting: Cloudflare Pages
-- Demo of Shortforme: https://shortforme.oddsignal.kr
+- Demo of Shortforme: https://shortforme.kr
 
 Contact: studio@oddsignal.kr
 
