@@ -88,12 +88,14 @@
     const run=()=>{stop();if(touched||!visible||document.hidden||calm.matches)return;timer=setInterval(()=>show(index+1),5500);};
     const touch=()=>{touched=true;stop();};
     tabs.forEach((tab,n)=>tab.addEventListener('click',()=>{touch();show(n);}));
+    // Mouse users: the left and right thirds of the image are click zones (an arrow shows on hover). A click that ends a drag is the swipe, not a second step.
+    let swipedAt=0;deck.querySelectorAll('.deck-zone').forEach(zone=>zone.addEventListener('click',()=>{if(performance.now()-swipedAt<400)return;touch();show(index+Number(zone.dataset.dir));}));
     deck.addEventListener('keydown',event=>{if(!event.target.matches('[role=tab]'))return;const keys={ArrowRight:index+1,ArrowLeft:index-1,Home:0,End:slides.length-1};if(!(event.key in keys))return;event.preventDefault();touch();show(keys[event.key],true);});
     deck.addEventListener('pointerenter',touch);deck.addEventListener('focusin',touch);
     // Swipe: touch anywhere on the banner, mouse drag on the image only (so text stays selectable).
     const banner=deck.closest('.venture')||deck;let startX=null,startY=0;
     banner.addEventListener('pointerdown',e=>{startX=e.pointerType==='mouse'&&!deck.contains(e.target)?null:e.clientX;startY=e.clientY;});
-    banner.addEventListener('pointerup',e=>{if(startX===null)return;const dx=e.clientX-startX,dy=e.clientY-startY;startX=null;if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)){touch();show(index+(dx<0?1:-1));}});
+    banner.addEventListener('pointerup',e=>{if(startX===null)return;const dx=e.clientX-startX,dy=e.clientY-startY;startX=null;if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)){swipedAt=performance.now();touch();show(index+(dx<0?1:-1));}});
     banner.addEventListener('pointercancel',()=>{startX=null;});
     document.addEventListener('visibilitychange',run);
     if('IntersectionObserver' in window)new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;run();},{threshold:.5}).observe(deck);
@@ -109,7 +111,7 @@
     const run=()=>{stop();if(touched||!visible||document.hidden||calm.matches)return;timer=setInterval(()=>go(index+1),5500);};
     const touch=()=>{touched=true;stop();};
     let startX=null;track.addEventListener('pointerdown',e=>{startX=e.clientX;});track.addEventListener('pointerup',e=>{if(startX===null)return;const dx=e.clientX-startX;startX=null;if(Math.abs(dx)>40){touch();go(index+(dx<0?1:-1));}});
-    deck.querySelectorAll('.ht-arrow').forEach(b=>b.addEventListener('click',()=>{touch();go(index+Number(b.dataset.dir));}));
+    deck.querySelectorAll('.ht-arrow,.deck-zone').forEach(b=>b.addEventListener('click',()=>{touch();go(index+Number(b.dataset.dir));}));
     dots.forEach((d,n)=>d.addEventListener('click',()=>{touch();go(n);}));
     track.addEventListener('keydown',event=>{const keys={ArrowRight:index+1,ArrowLeft:index-1};if(!(event.key in keys))return;event.preventDefault();touch();go(keys[event.key]);});
     deck.addEventListener('pointerenter',touch);deck.addEventListener('focusin',touch);track.addEventListener('touchstart',touch,{passive:true});

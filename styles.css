@@ -722,3 +722,18 @@ html[lang=en] .bp-head h3{letter-spacing:-.025em;line-height:1.22}
 .steps h3{word-break:keep-all}
 /* 2026-10-11: English PR heading flows without its forced break on phones (the break left one word alone on a line). */
 @media(max-width:760px){html[lang=en] .pr-band h2 br{display:none}}
+/* 2026-10-11: mouse pointers get click zones on the left and right of each home slider image; an arrow shows on hover so the slide change is discoverable without swiping. Touch devices keep swipe and the dots. */
+.deck-zone{display:none}
+@media(hover:hover) and (pointer:fine){
+.sf-deck,.ht-carousel{position:relative}
+.deck-zone{display:block;position:absolute;top:0;width:36%;aspect-ratio:773.28/1350;padding:0;border:0;background:none;color:var(--ink);cursor:pointer;z-index:2}
+.deck-prev{left:0}
+.deck-next{right:0}
+.deck-zone::before{content:"";position:absolute;inset:0;opacity:0;transition:opacity .25s;background:linear-gradient(90deg,#000a,#0000)}
+.deck-next::before{background:linear-gradient(270deg,#000a,#0000)}
+.deck-zone span{position:absolute;top:50%;left:20px;width:44px;height:44px;margin-top:-22px;border:1px solid #f4f1ea8c;border-radius:50%;background:#111c;display:grid;place-items:center;font-size:15px;opacity:0;transform:translateX(6px);transition:opacity .25s,transform .25s,border-color .2s,color .2s}
+.deck-next span{left:auto;right:20px;transform:translateX(-6px)}
+.deck-zone:hover::before,.deck-zone:hover span{opacity:1}
+.deck-zone:hover span{transform:none;border-color:var(--accent);color:var(--accent)}
+}
+@media(hover:hover) and (pointer:fine) and (max-width:900px){.deck-zone{aspect-ratio:1.44/3}}
