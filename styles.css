@@ -747,3 +747,11 @@ html[lang=en] .bp-head h3{letter-spacing:-.025em;line-height:1.22}
 .bz-text small{font-size:clamp(6.6px,1.375cqi,9.9px)}
 .bz-word{height:3.19cqi}
 .bz-text b{font-size:3.85cqi}
+/* 2026-10-11: business page keeps one vertical rhythm — the same gap above and below every block (each brand intro, each chapter, the Venn chapter). Earlier per-block values are overridden here. */
+.bp-biz,.bp-why{--bp-gap:136px}
+.bp-biz,#hightemp.bp-biz{padding-top:var(--bp-gap)}
+.bp-intro{padding-bottom:var(--bp-gap)}
+.bp-chapter,.bp-why .bp-center{padding-block:var(--bp-gap)}
+.bp-why{padding-bottom:0}
+@media(max-width:1100px){.bp-biz,.bp-why{--bp-gap:104px}}
+@media(max-width:760px){.bp-biz,.bp-why{--bp-gap:72px}}
