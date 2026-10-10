@@ -718,3 +718,5 @@ html[lang=en] .bp-head h3{letter-spacing:-.025em;line-height:1.22}
 .venture.hightemp{padding-top:104px}
 @media(max-width:1100px){.venture.shortforme{padding-bottom:80px}.venture.hightemp{padding-top:80px}}
 @media(max-width:760px){.venture.shortforme{padding-bottom:56px}.venture.hightemp{padding-top:48px}}
+/* 2026-10-11: step titles wrap between words, never inside one (two-word titles on narrow screens). */
+.steps h3{word-break:keep-all}
