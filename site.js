@@ -24,7 +24,7 @@
     ht1Title:'Watch lessons, get feedback',ht1Body:'Take lessons on web and mobile, and get 1:1 feedback.',
     ht2Title:'Learning becomes a habit.<br>Experience sets the standard.',ht2Body:'Get today’s routine, built on the knowledge of Korea’s No. 1 bodybuilder.',
     ht3Title:'Same time spent, different results',ht3Body:'Data that gets more accurate as it builds,<br>so you can find your own way.',
-    prEyebrow:'01 — MARKETING TRACK RECORD',prTitle:'The <em>experience</em> of turning<br>small-brand potential into results',
+    prEyebrow:'01 — MARKETING TRACK RECORD',prTitle:'The <em>experience</em> of turning <br>small-brand potential into results',
     prLead:'Helping good products reach more people.<br>We connect content, technology and the work in between.',
     prTag:'Growth concept',prP1y:'2022',prP2y:'2023',prP3y:'2024',prP4y:'2026',prP5y:'NOW',
     prP1t:'Creator marketing agency MOMENTO',prP1d:'Founded',

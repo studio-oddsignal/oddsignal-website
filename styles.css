@@ -720,3 +720,5 @@ html[lang=en] .bp-head h3{letter-spacing:-.025em;line-height:1.22}
 @media(max-width:760px){.venture.shortforme{padding-bottom:56px}.venture.hightemp{padding-top:48px}}
 /* 2026-10-11: step titles wrap between words, never inside one (two-word titles on narrow screens). */
 .steps h3{word-break:keep-all}
+/* 2026-10-11: English PR heading flows without its forced break on phones (the break left one word alone on a line). */
+@media(max-width:760px){html[lang=en] .pr-band h2 br{display:none}}
