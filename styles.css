@@ -761,3 +761,7 @@ html[lang=en] .bp-head h3{letter-spacing:-.025em;line-height:1.22}
 .ventures .pr-band,.ventures .venture.shortforme,.ventures .venture.hightemp,.approach.section,.about.section{padding-block:var(--home-gap)}
 @media(max-width:1100px){.ventures,.approach,.about{--home-gap:104px}}
 @media(max-width:760px){.ventures,.approach,.about{--home-gap:72px}}
+/* 2026-10-11: on wide screens the Korean track-record heading keeps its two lines; the text column grows to fit the first line instead of breaking it. */
+@media(min-width:1101px){html:not([lang=en]) .pr-band{grid-template-columns:minmax(max-content,1fr) minmax(0,2.04fr)}html:not([lang=en]) .pr-band h2{white-space:nowrap}}
+/* 2026-10-11: the English track-record heading flows without its forced break at every width (the narrow text column left one word alone on a line). */
+html[lang=en] .pr-band h2 br{display:none}
