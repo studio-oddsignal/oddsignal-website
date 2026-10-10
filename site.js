@@ -143,6 +143,15 @@
     if('IntersectionObserver' in window)new IntersectionObserver(entries=>{const on=entries[0].isIntersecting;stage.classList.toggle('is-paused',!on);if(svg&&!calm.matches)on?svg.unpauseAnimations():svg.pauseAnimations();}).observe(stage);
   })();
   // Hide the mobile menu only after all handlers are installed.
+  // About: on the two-column layout the diagram is shifted so the lower brand card's bottom edge sits on the bottom of the last text line beside it. Re-measured when either column reflows (resize, language, fonts).
+  const aboutSign=document.querySelector('.about-sign'),aboutCopy=document.querySelector('.about-copy');
+  if(aboutSign&&aboutCopy&&'ResizeObserver' in window){
+    const card=aboutSign.querySelector('.bz-ac'),lastLine=[...aboutCopy.querySelectorAll('p')].pop();
+    const align=()=>{aboutSign.style.translate='';if(!card||!lastLine||getComputedStyle(aboutSign.parentElement).display!=='grid')return;
+      const cs=getComputedStyle(lastLine),textBottom=lastLine.getBoundingClientRect().bottom-(parseFloat(cs.lineHeight)-parseFloat(cs.fontSize))/2;
+      aboutSign.style.translate=`0 ${Math.round((textBottom-card.getBoundingClientRect().bottom)*10)/10}px`;};
+    const watch=new ResizeObserver(align);watch.observe(aboutCopy);watch.observe(aboutSign);addEventListener('load',align);new MutationObserver(align).observe(root,{attributes:true,attributeFilter:['lang']});
+  }
   // Venn: keep the three-circle overlap lit. The circles turn in 3D at different depths, so their on-screen boxes are read every frame while the scene is in view.
   const vennMid=document.querySelector('.bv-orb-mid');
   if(vennMid){
