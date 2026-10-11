@@ -1,0 +1,4 @@
+.not-found{padding-block:22vh;min-height:100vh}
+.not-found h1{font-family:var(--serif);font-weight:400;font-size:clamp(30px,4vw,52px);margin:0 0 20px}
+.not-found p{color:var(--muted);margin:0 0 14px}
+.not-found a{color:var(--accent)}
