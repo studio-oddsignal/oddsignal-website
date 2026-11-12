@@ -10,7 +10,7 @@
     bpSf3Letter:'Drawing on the success of dozens of creator products and years of data from the content commerce ecosystem, we provide proven ad creative formats, not videos that merely look good.<br>As a marketer and video creator with AX (AI Transformation) experience at a unicorn startup, I aim to resolve the information asymmetry in persuading the public through video.',bpSf3Sign:'Oddsignal FOUNDER.',
     bvNeedA:'Brands',bvNeedB:'Local shops',bvNeedC:'Individuals',bvMake0:'Pick a reference',bvRefCta:'Make my brand ad',bvFormUrl:'Product link URL',bvFormGo:'Import',bvFormA:'Product name',bvFormB:'Key strengths',bvFormC:'Details',bvMakeA:'Your brand details',bvMakeB:'Review storyboard',bvMakeC:'Done',bvVennA:'Marketing<br>Data',bvVennB:'Video<br>Creator',bvVennC:'Development<br>Experience',
     skip:'Skip to content',navVentures:'Ventures',navApproach:'Approach',navAbout:'About',navContact:'Contact',
-    hero1:'From the signal',hero2:'others missed,',hero3:'we begin.',
+    hero1:'From the signal',hero2:'others missed,',hero3:'we begin',
     heroBody:'At every crossroads of change, a small signal that feels different.<br>Oddsignal turns it into growth.',
     heroCta:'Our ventures',contactCta:'Let’s talk',concept:'From brief to scenes · Creative workflow',heroFoot:'We build ideas, operate them, and make the next version better.',
     sfTab1:'About Shortforme',sfTab2:'Pick an ad format',sfTab3:'Plan by chat',
@@ -22,7 +22,7 @@
     
     htTab1:'App',htTab2:'Plan',htTab3:'Learn & lift',htTagSample:'App screen · sample data',htTagCompose:'App screen, composed example',
     ht1Title:'Watch lessons, get feedback',ht1Body:'Take lessons on web and mobile, and get 1:1 feedback.',
-    ht2Title:'Learning becomes a habit.<br>Experience sets the standard.',ht2Body:'Get today’s routine, built on the knowledge of Korea’s No. 1 bodybuilder.',
+    ht2Title:'Learning becomes a habit.<br>Experience sets the standard',ht2Body:'Get today’s routine, built on the knowledge of Korea’s No. 1 bodybuilder.',
     ht3Title:'Same time spent, different results',ht3Body:'Data that gets more accurate as it builds,<br>so you can find your own way.',
     prEyebrow:'01 — MARKETING TRACK RECORD',prTitle:'The <em>experience</em> of turning <br>small-brand potential into results',
     prLead:'Helping good products reach more people.<br>We connect content, technology and the work in between.',
@@ -36,8 +36,8 @@
     venturesTitle:'Two ventures.<br><em>One point of view.</em>',venturesBody:'Creating and operating belong together.<br>We learn by doing both.',frame1:'A real product',frame2:'A brand story',frame3:'A short film',shortVisualFoot:'A short story that starts with a good product.',shortName:'Shortforme',
     shortTitle:'Short-form ads for your brand',shortBody:'Everyone needs short-form ads now.<br>We provide video production tools proven in the Korean ad ecosystem.',shortTag1:'Product-led planning',shortTag2:'Scene-by-scene review',inService:'Live',shortCta:'Shortforme.kr',
     highVisualFoot:'Where knowledge becomes practice.',highName:'Hightemp',highTitle:'A change in your life. Value beyond it.',highBody:'A fitness education brand featuring Park Jaehun’s Allright Class. Classes and feedback across web and mobile help connect learning with real training.',highTag1:'Online classes',highTag3:'Feedback',brandSite:'Brand website',highCta:'HIGHTEMP.co.kr',newTab:' (opens in a new tab)',
-    approachTitle:'So ideas turn<br><em>straight into action.</em>',
-    step1:'Understand.',step1Body:'Start with the product, the customer and the problem worth solving.',step2:'Execute right away.',step2Body:'Find the message. Turn it into content and a useful product.',step3:'Check it ourselves.',step3Body:'Check the actual experience and output. Refine the details.',step4:'Improve.',step4Body:'Bring what we learn from operations into the next iteration.',
+    approachTitle:'So ideas turn<br><em>straight into action</em>',
+    step1:'Understand',step1Body:'Start with the product, the customer and the problem worth solving.',step2:'Execute right away',step2Body:'Find the message. Turn it into content and a useful product.',step3:'Check it ourselves',step3Body:'Check the actual experience and output. Refine the details.',step4:'Improve',step4Body:'Bring what we learn from operations into the next iteration.',
     aiTitle:'Building with AI, thoughtfully.',aiBody:'We are preparing an operating system that connects Claude to development, planning, quality review and analysis. People remain responsible for key decisions and review before publication.',aiStatus:'Planned direction',
     aboutTitle:'Made by a creator.<br><em>Built to operate.</em>',aboutBody1:'Oddsignal is an independent studio rooted in marketing and video production. We create content, operate customer-facing experiences, and build the tools that the work calls for.',aboutBody2:'We bring Hightemp’s web and app operating experience together with Shortforme’s creative-tool development, exploring how a small team can consistently make good work.',founder:'Yeowoon Yoo',
     contactTitle:'Let’s make<br><em>the next story.</em>',contactBody:'For conversations about brands, content and new possibilities.',footerStatement:'New possibilities between content and technology.',backTop:'Back to top',company:'Oddsignal · Founder Yeowoon Yoo<br>Business registration 393-08-03564 · Pyeongchang, South Korea'
