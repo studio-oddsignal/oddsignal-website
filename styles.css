@@ -702,12 +702,19 @@ html[lang=en] .bp-head h3{letter-spacing:-.025em;line-height:1.22}
 @keyframes bv-glow{from{filter:brightness(1.35) drop-shadow(0 0 1cqw #eb5d2840)}to{filter:brightness(1.35) drop-shadow(0 0 2.4cqw #eb5d28b3)}}
 /* Slides 03 and 04 as 3D scenes: the stage has perspective, and each object is a tilted slab with a stacked-shadow edge (same technique as .bv-ph-body). Keyframes that move these objects use the translate/scale properties so they do not overwrite the 3D transform. */
 @keyframes sf-float{from{translate:0 -1.2cqh}to{translate:0 1.2cqh}}
-/* Shortforme intro slide: logo lockup (lit 3D icon, wordmark beside it) in the Hightemp intro frame. */
-.sf-intro{container-type:size}
-.sfi-stage{position:absolute;inset:0;z-index:1;overflow:hidden}
-.sf-intro .hightemp-visual .sfi-word{position:absolute;inset:50cqh auto auto 42cqw;width:34cqw;height:auto;object-fit:contain;translate:0 -50%}
-.sfi-tile{position:absolute;left:10cqw;top:32cqh;width:36cqh;aspect-ratio:1;display:grid;place-items:center;border-radius:22%;background:linear-gradient(215deg,#ff8a66,#ff5533 42%,#e8431f);transform:perspective(90cqw) rotateY(26deg) rotateX(7deg);box-shadow:-.3cqh 0 #d83e1c,-.6cqh 0 #c93818,-.9cqh 0 #b93314,-1.2cqh 0 #a92e12,-1.5cqh 0 #99290f,-1.8cqh 0 #89240d,0 4cqh 8cqh #0000008c,inset 0 .4cqh .3cqh #ffffff66}
-.sfi-tile svg{width:66%;height:auto}
+/* 2026-11-16: Shortforme intro slide plays the approved launch film (30s, 16:9). It starts muted when the deck is in view; the round button turns sound on.
+   Desktop crops the film's sides to the deck's 2148/1350 frame (the film keeps 160px clear at each side); the 4:3 mobile frame shows it whole.
+   The button sits bottom centre: the left and right 36% of the frame are the deck's click zones, which paint above the slide. */
+.sf-film{background:#111}
+.sf-film>video{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+.sf-sound{position:absolute;left:50%;bottom:12px;translate:-50% 0;z-index:3;width:40px;height:40px;padding:0;display:grid;place-items:center;border:1px solid #f4f1ea33;border-radius:50%;background:#111c;color:#f4f1ea;cursor:pointer;transition:border-color .2s,color .2s}
+.sf-sound[hidden]{display:none}
+.sf-sound:hover,.sf-sound:focus-visible{border-color:var(--accent);color:var(--accent)}
+.sf-sound svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:900px){
+.sf-film>video{object-fit:contain}
+.sf-sound{bottom:calc(12.5% + 8px)}/* 12.5% of the 4:3 frame is the bar under the 16:9 film */
+}
 /* Shortforme deck tabs: same dash indicators as the Hightemp dots; the step names stay for screen readers. */
 .sf-deck .sf-tabs{justify-content:center;gap:2px;border-top:0;margin:14px 0 0}
 .sf-deck .sf-tabs button{flex:0 0 32px;width:32px;min-height:0;height:44px;padding:0;margin:0;border:0;position:relative}
