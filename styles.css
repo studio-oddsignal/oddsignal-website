@@ -63,8 +63,6 @@ section{scroll-margin-top:24px}
 .venture-link-row{margin-top:24px;display:flex;justify-content:space-between;align-items:center;gap:16px}
 .status{font-size:12px;color:var(--muted);display:inline-flex;gap:8px;align-items:center}
 .status>span:first-child{width:4px;height:4px;border-radius:50%;background:var(--accent)}
-.hightemp-visual{background:#000;border:1px solid #232320;padding:24px 24px}
-.hightemp-visual img{position:absolute;inset:30px 0 0;width:100%;height:335px;object-fit:cover;object-position:86% center}
 .approach{background:#1b1b1a;border-block:1px solid #262623}
 .steps{padding:0;margin:0;list-style:none;display:grid;grid-template-columns:repeat(4,1fr)}
 .steps li{position:relative;border-top:1px solid #575347;padding:24px 32px 10px 0}
@@ -147,7 +145,6 @@ html{scroll-padding-top:32px}
 .venture-statement{font-size:24px}
 .body-copy{font-size:13px;max-width:none}
 .venture-link-row{margin-top:20px}
-.hightemp-visual img{height:300px;object-position:84% center}
 .steps{grid-template-columns:1fr 1fr}
 .steps li{padding:24px 20px 32px 0}
 .steps li+li{padding-left:20px}
@@ -235,13 +232,6 @@ body{background:white;color:black}
 /* 2026-10-08: Hightemp app feature preview deck (reuses the deck component). Slide 1 keeps the original visual. */
 .ht-deck .sf-shot{aspect-ratio:1/1}
 .ht-deck .sf-shot>img{object-position:center}
-.ht-intro{background:#000;border-color:#232320}
-.ht-intro .hightemp-visual{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;border:0;padding:20px 24px}
-.ht-intro .hightemp-visual img{inset:44px 0 40px;height:calc(100% - 84px)}
-@media(max-width:900px){
-.ht-intro .hightemp-visual{padding:14px 16px}
-.ht-intro .hightemp-visual img{inset:38px 0 34px;height:calc(100% - 72px)}
-}
 @media(max-width:900px){
 .ht-deck .sf-slide figcaption{min-height:152px}
 }
@@ -702,7 +692,7 @@ html[lang=en] .bp-head h3{letter-spacing:-.025em;line-height:1.22}
 @keyframes bv-glow{from{filter:brightness(1.35) drop-shadow(0 0 1cqw #eb5d2840)}to{filter:brightness(1.35) drop-shadow(0 0 2.4cqw #eb5d28b3)}}
 /* Slides 03 and 04 as 3D scenes: the stage has perspective, and each object is a tilted slab with a stacked-shadow edge (same technique as .bv-ph-body). Keyframes that move these objects use the translate/scale properties so they do not overwrite the 3D transform. */
 @keyframes sf-float{from{translate:0 -1.2cqh}to{translate:0 1.2cqh}}
-/* 2026-11-16: Shortforme intro slide plays the approved launch film (30s, 16:9). It starts muted when the deck is in view; the round button turns sound on.
+/* 2026-11-16: Shortforme and Hightemp intro slides play their approved launch films (Hightemp 36s, same rules) (30s, 16:9). It starts muted when the deck is in view; the round button turns sound on.
    Desktop crops the film's sides to the deck's 2148/1350 frame (the film keeps 160px clear at each side); the 4:3 mobile frame shows it whole.
    The button sits bottom centre: the left and right 36% of the frame are the deck's click zones, which paint above the slide. */
 .sf-film{background:#111}
@@ -721,9 +711,6 @@ html[lang=en] .bp-head h3{letter-spacing:-.025em;line-height:1.22}
 .sf-deck .sf-tabs button::before{content:"";position:absolute;left:4px;right:4px;top:21px;height:2px;background:#42403a;transition:background .2s}
 .sf-deck .sf-tabs button[aria-selected=true]::before{background:var(--accent)}
 .sf-deck .sf-tabs button span{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-/* Hightemp intro slide: the class name sits in the empty left half, in the Hightemp serif tone. */
-.ht-intro{container-type:size}
-.ht-intro .hti-word{position:absolute;z-index:2;left:7cqw;top:50%;translate:0 -50%;margin:0;font-family:var(--serif);font-weight:400;font-size:6.2cqw;line-height:1;letter-spacing:-.025em;white-space:nowrap;color:#f4efe6;filter:drop-shadow(0 .6cqh 2.4cqh #000c)}
 /* Business page intro: the Shortforme 3D logo tile from the home intro slide, floating above the status row. */
 .bp-logo{display:grid;place-items:center;width:88px;aspect-ratio:1;margin:0 0 16px -2px;border-radius:22%;background:linear-gradient(215deg,#ff8a66,#ff5533 42%,#e8431f);transform:perspective(600px) rotateY(26deg) rotateX(7deg);box-shadow:-1px 0 #d83e1c,-2px 0 #c93818,-3px 0 #b93314,-4px 0 #a92e12,-5px 0 #99290f,-6px 0 #89240d,0 16px 32px #0000008c,inset 0 1px 1px #ffffff66}
 .bp-logo svg{width:66%;height:auto}
